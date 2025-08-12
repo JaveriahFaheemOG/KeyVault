@@ -68,7 +68,7 @@ You can either **clone** this repository or simply **download** the project ZIP 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/JaveriahFaheemOG/KeyVault/tree/main.git
+   git clone https://github.com/JaveriahFaheemOG/KeyVault.git
    ```
 2. Navigate to the project directory
 
