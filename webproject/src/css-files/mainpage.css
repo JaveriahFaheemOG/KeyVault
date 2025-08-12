@@ -1,0 +1,121 @@
+body{
+    background-color: #B9BAA3;
+    
+}
+.smoketext
+{
+    position: absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.congrats{ align-items: center;
+    justify-content: center;
+    padding-bottom: 90px;
+    /*height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text horizontally */}
+.congrats h1{
+    font-weight: bold;
+    font-size: 4em;
+    color: #2f2235;
+}
+.gifdiv{
+    display: flex;
+}
+.lines p{
+    font-weight: bold;
+    font-size: 2em;
+    padding-top: 10%;
+    color: #2f2235;
+}
+.lines{
+    width: 30%;
+    padding-left: 20%;
+}
+.smokeul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.smokeul li{
+    list-style: none;
+    color:#2F2235;
+    font-size: 6em;
+    font-weight: bold;
+    letter-spacing: 10px;
+    filter: blur(1px);
+}
+.smokeul:hover li{
+    animation: animate 2s linear infinite;   
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg) translateY(0px);
+        opacity: 1;
+        filter: blur(1px);
+    }
+    100%
+    {
+        transform: rotate(45deg) translateY(-200px);
+        opacity: 0;
+        filter: blur(20px);
+    }
+}
+.smokeul li:nth-child(1)
+{
+    animation-delay:0s ;
+}
+.smokeul li:nth-child(2)
+{
+    animation-delay:.2s ;
+}
+.smokeul li:nth-child(3)
+{
+    animation-delay:.4s ;
+}
+.smokeul li:nth-child(4)
+{
+    animation-delay:.6s ;
+}
+.smokeul li:nth-child(5)
+{
+    animation-delay:.8s ;
+}
+.smokeul li:nth-child(6)
+{
+    animation-delay:1.0s ;
+}
+.smokeul li:nth-child(7)
+{
+    animation-delay:1.2s ;
+}
+.smokeul li:nth-child(8)
+{
+    animation-delay:1.4s ;
+}
+.handlogo{
+    width: 150px;
+    height: 110px;
+}
+.letsgo{
+    padding-top: 5%;
+    display: flex;
+    padding-left: 31%;
+}
+.buttongo{
+    padding-top: 4%;
+}
+.buttongo button{
+    font-size: 1.5em; /* Adjust font size */
+    padding: 10px 20px; /* Adjust the padding for button size */
+    border-radius: 5px; /* Optional: rounded corners */
+    background-color: #60495a; /* Button color */
+    color: #bfc3ba; /* Text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Cursor on hover */
+}
+.buttongo button:hover{
+    background-color: #2f2235; /* Hover effect */
+}

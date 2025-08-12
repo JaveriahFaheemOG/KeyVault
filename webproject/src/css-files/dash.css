@@ -1,0 +1,349 @@
+/* Dash Container - Positioning and Background */
+.Dash-container {
+    position: relative;
+    padding: 20px;
+    min-height: 100vh; /* Ensure it covers the full height of the component */
+}
+.Dash-container .empty-dashboard {
+    background-image: url('../images/vector7.png');
+    background-size: 280px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Password-container:not(.empty-dashboard) {
+    background-image: none;
+}
+
+/* Flexbox styling for the header container */
+.Dash-div{
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Align title to the left and button to the right */
+    position: relative;
+    z-index: 1; /* Ensure content is on top of the background */
+    margin-bottom: 10px;
+}
+
+/* Title styling */
+.Dash-div h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Button styling */
+.Dash-div button{
+    font-family: 'Hind', sans-serif;
+    background-color: #4c1f1f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Dash-div button:hover{
+    background-color: #5c2626;
+}
+
+/* Styling for the horizontal rule */
+.Dash-div hr {
+    border: 0.5px solid #ccc;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Address Tiles Layout (Grid) */
+.address-container, .notes-container, .password-container ,.bank-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Address/Note Card Styling */
+.address-card, .note-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.658);
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.address-card:hover, .note-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.address-title, .note-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Address/Note Icon Styling */
+.address-icon img, .note-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Address/Note Detail Popup Styling */
+.address-detail-popup, .notes-detail-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.address-detail-popup h2, .notes-detail-popup h2 {
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.address-detail-popup p, .notes-detail-popup p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Close Button */
+.close-info {
+    background-color: #4c1f1f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-info:hover {
+    background-color: #5c2626;
+}
+
+/* Popup content form styling */
+.popup-content3 label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: #f1f1f1;
+    font-weight: 500;
+}
+
+.popup-content3 input, .popup-content3 textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.popup-content3 h2 {
+    color: #1a1a1a;
+}
+.password-container .card1 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(15, 4, 4, 0.658);
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.password-container .card1:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    box-shadow: 0 4px 15px rgba(105, 36, 36, 0.5); /* Add glowing effect */
+}
+.password-container .card1:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(76, 31, 31, 0.7);
+    opacity: 0.8;
+    pointer-events: none; /* Ensures it doesn’t affect the hover area */
+}
+.password-container .card1 i {
+    font-size: 20px;
+    color: #4c1f1f;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.password-container .card1 i:hover {
+    color: #333;
+}
+.password-container .card-image1 img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.password-container .category1 {
+    font-family: 'Hind', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222121;
+    margin-bottom: 5px;
+}
+.password-container .heading1 {
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cont-popup2 {
+    display: none; /* Initially hidden */
+    position: fixed; /* Use fixed positioning to center on screen */
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff ;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.603);
+    width: 200%;
+    max-width: 400px;
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    color: #1a1919;
+    z-index: 110;
+    display:block;
+}
+
+.cont-popup2.show {
+    display: block;
+}
+
+/* Close button for info modal */
+.cont-popup2 .close-info {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+    color: #888;
+    cursor: pointer;
+}
+
+.cont-popup2 .close-info:hover {
+    color: #333;
+}
+.okbtn {
+    background-color: #4c1f1f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.okbtn:hover {
+    background-color: #5c2626;
+}
+
+.account-card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.658);
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    margin-left:-20px;
+    margin-top:-20px;
+    width: 104.4%;
+}
+
+.account-card1:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    box-shadow: 0 4px 15px rgba(105, 36, 36, 0.5); /* Add glowing effect */
+}
+
+
+.account-card1 .account-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.account-card1 .account-holder {
+    font-family: 'Hind', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222121;
+    margin-bottom: 5px;
+}
+.bank-detail-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    z-index: 120;
+}
+
+.bank-detail-popup .popup-content {
+    font-family: 'Hind', sans-serif;
+}
+
+.bank-detail-popup .popup-content h2 {
+    font-size: 20px;
+    color: 
+    #1a1a1a 
+    ;
+    margin-bottom: 15px;
+}
+
+.bank-detail-popup .close-info {
+    background-color: #4c1f1f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.bank-detail-popup .close-info:hover {
+    background-color: #612727;
+}

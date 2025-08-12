@@ -1,0 +1,36 @@
+.Audit-container {
+    position: relative;
+    padding: 20px;
+    background-image: url('../images/vector7.png');
+    background-size: 280px;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensure it covers the full height of the component */
+}
+
+/* Flexbox styling for the header container */
+.Audit-div {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Align title to the left and button to the right */
+    position: relative;
+    z-index: 1; /* Ensure content is on top of the background */
+    margin-bottom: 10px;
+}
+
+/* Title styling */
+.Audit-div h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1a1a1a ;
+    margin: 0;
+}
+
+
+/* Styling for the horizontal rule */
+.Audit-div hr {
+    border: 0.5px solid #ccc;
+    width: 100%;
+    max-width: 800px;
+}

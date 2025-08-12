@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.dashboard-container {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Universal reset */
+.dashboard-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+  --primary-color: #49111C;
+  --primary-color-light: #883b3b;
+  --sidebar-color: #ffffff;
+  --text-color: #1a1a1a;
+  --header-bg-color: #49111C;
+  --body-bg-color: #B9BAA3;
+  --tran-05: 0.5s;
+  --tran-03: 0.3s;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --sidebar-width: 250px;
+  --collapsed-sidebar-width: 60px;
+}
+
+/* Body Styles */
+.dashboard-container body {
+  background-color: var(--body-bg-color);
+}
+
+/* Header */
+.dashboard-container .dashheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--header-bg-color);
+  padding: 15px 20px;
+  padding-top: 25px;
+  color: var(--sidebar-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.dashboard-container .headerlogo2 {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-container .logo2 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    padding-bottom: 10px;
+    margin-left: 570px;
+    font-size: 32px;
+   font-weight: bold;
+   color: var(--sidebar-color);
+}
+
+.dashboard-container .logoimage2 {
+  width: 60px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+/* Search Bar */
+.dashboard-container .container {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-container .searchbar {
+  position: relative;
+}
+
+.dashboard-container .searchbar input[type='search'] {
+  padding: 8px 40px 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: all var(--tran-03);
+}
+
+.dashboard-container .searchbar input[type='search']:focus 
+{
+  border-color: var(--primary-color-light);
+  box-shadow: 0 0 8px var(--shadow-color);
+}
+
+.dashboard-container .searchbar .fa-search {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+/* Main Layout */
+.dashboard-container .maindash {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.dashboard-container .naviagtion {
+  background-color: var(--primary-color);
+  color: var(--sidebar-color);
+  width: 250px;
+  padding: 20px 0;
+  box-shadow: 4px 0 8px var(--shadow-color);
+  align-items: right;
+}
+
+.dashboard-container .naviagtion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-container .naviagtion ul li {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color var(--tran-03);
+  border-radius: 8px;
+}
+
+.dashboard-container .naviagtion ul li.active,
+.dashboard-container .naviagtion ul li:hover {
+  background-color: var(--primary-color-light);
+}
+
+.dashboard-container .naviagtion ul li .icond {
+  margin-right: 15px;
+  font-size: 20px;
+  color: var(--sidebar-color);
+}
+
+.dashboard-container .naviagtion ul li .title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--sidebar-color);
+  transition: color var(--tran-03);
+}
+
+/* Content Area */
+.dashboard-container .mainright {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: var(--body-bg-color);
+  transition: opacity var(--tran-03);
+}
+
+/* Content Section Styles */
+.dashboard-container .mainright > div {
+  background-color:#ffffff  ;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: transform var(--tran-03), box-shadow var(--tran-03);
+}
+
+
+/* Links */
+.dashboard-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Sign-out Button */
+.dashboard-container .naviagtion ul li:last-child {
+  margin-top: auto;
+  color: var(--sidebar-color);
+}
+
+.dashboard-container .naviagtion ul li:last-child:hover {
+  background-color: #ff4d4d;
+}
+
+* Sidebar Collapsed State */
+.dashboard-container.collapsed .naviagtion {
+  width: var(--collapsed-sidebar-width);
+  transition: width var(--tran-05);
+}
+
+.dashboard-container.collapsed .naviagtion ul li .title {
+  display: none; /* Hide text when sidebar is collapsed */
+}
+
+.dashboard-container.collapsed .mainright {
+  margin-left: 0px;
+
+}
+
+/* Toggle Sidebar Button */
+.toggle-sidebar-btn {
+    position: absolute;
+    top: 20px;
+    left: calc(var(--sidebar-width) - 45px);
+    background-color: var(--primary-color-light);
+    color: var(--sidebar-color);
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--tran-03);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .toggle-sidebar-btn .fa {
+    font-size: 1.2em; /* Adjust icon size */
+  }
+  
+.dashboard-container.collapsed .toggle-sidebar-btn {
+  left: calc(var(--collapsed-sidebar-width) - 47px);
+}
+
+.toggle-sidebar-btn:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Adjusting Sidebar Width When Collapsed */
+.dashboard-container.collapsed .naviagtion {
+    width: var(--collapsed-sidebar-width); /* Apply smaller width */
+  }
+  
+  /* Ensure Main Content Area Adjusts to Sidebar Width */
+  .dashboard-container.collapsed .mainright {
+    margin-left: 0px;
+  }
+  
+  /* Remove Any Extra Space in the Layout */
+  .dashboard-container .maindash {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0; /* Remove padding if present */
+    display: flex;
+  }
+
+  .sidebar-toggle i {
+    font-size: 1.2em; /* Adjust size as needed */
+    color: #fff;      /* Adjust color as needed */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .sidebar-toggle i:hover {
+    color: #ccc; /* Hover color */
+  }
+  
+  @media screen and (max-width: 700px) {
+    .dashheader, 
+    .maindash, 
+    .naviagtion, 
+    .mainright, 
+    .mainright > div {
+      flex-direction: column;
+    }
+  }

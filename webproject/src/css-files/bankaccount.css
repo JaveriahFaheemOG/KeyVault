@@ -1,0 +1,221 @@
+.Bank-container {
+    position: relative;
+    padding: 20px;
+    min-height: 100vh;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.Bank-container.empty {
+    background-image: url('../images/vector7.png');
+    background-size: 280px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Bank-container:not(.empty) {
+    background-image: none;
+}
+
+/* Flexbox styling for the header container */
+.Bank-div {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Align title to the left and button to the right */
+    position: relative;
+    z-index: 1; /* Ensure content is on top of the background */
+    margin-bottom: 10px;
+}
+
+/* Title styling */
+.Bank-div h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1a1a1a ;
+    margin: 0;
+}
+
+/* Button styling */
+.Bank-div button {
+    font-family: 'Hind', sans-serif;
+    background-color: #4c1f1f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Bank-div button:hover {
+    background-color:
+    #5c2626
+    ;
+}
+
+/* Styling for the horizontal rule */
+.Bank-div hr {
+    border: 0.5px solid #ccc;
+    width: 100%;
+    max-width: 800px;
+}
+
+
+/* Popup styling */
+.bank-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    z-index: 100;
+    width: 450px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.bank-popup .popup-content {
+    font-family: 'Hind', sans-serif;
+}
+
+.bank-popup .popup-content h2 {
+    font-size: 20px;
+    color: #1a1a1a ;
+    margin-bottom: 20px;
+}
+
+/* Close icon styling */
+.bank-popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    color: #888;
+    cursor: pointer;
+}
+
+.bank-popup .close:hover {
+    color: #555;
+}
+
+/* Input field styling */
+.bank-popup input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Form buttons */
+.bank-popup .btn1 {
+    background-color: #4c1f1f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.bank-popup .btn1:hover {
+    background-color: #5c1f1f;
+}
+
+/* Saved accounts grid */
+.bank-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual account card styling */
+.account-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(15, 4, 4, 0.658);
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    box-shadow: 0 4px 15px rgba(105, 36, 36, 0.5); /* Add glowing effect */
+}
+
+.account-card:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(76, 31, 31, 0.7);
+    opacity: 0.8;
+    pointer-events: none; /* Ensures it doesn’t affect the hover area */
+}
+
+.account-card .account-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.account-card .account-holder {
+    font-family: 'Hind', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222121;
+    margin-bottom: 5px;
+}
+
+/* Account details popup */
+.bank-detail-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    z-index: 120;
+}
+
+.bank-detail-popup .popup-content {
+    font-family: 'Hind', sans-serif;
+}
+
+.bank-detail-popup .popup-content h2 {
+    font-size: 20px;
+    color: 
+    #1a1a1a 
+    ;
+    margin-bottom: 15px;
+}
+
+.bank-detail-popup .close-info {
+    background-color: #4c1f1f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.bank-detail-popup .close-info:hover {
+    background-color: #612727;
+}
